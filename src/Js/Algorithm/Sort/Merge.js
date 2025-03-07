@@ -1,80 +1,92 @@
-// Function to merge two sorted parts of array
-function Merge(arr, left, middle, right) {
-    // Length of both sorted aub arrays
-    let l1 = middle - left + 1;
-    let l2 = right - middle;
-    // Create new subarrays
-    let arr1 = new Array(l1);
-    let arr2 = new Array(l2);
+function Merge(arr, left, mid, right) { // L0,M0,R1
+	console.log( "Merge Value :",left,mid,right);
+	
+    const n1 = mid - left + 1; // 1
+    const n2 = right - mid; // 1
 
-    // Assign values in subarrays
-    for (let i = 0; i < l1; ++i) {
-        console.log(i, l1, "each");
-        arr1[i] = arr[left + i];
+	console.log( "N" ,n1,n2);
+	
+
+    // Create temp arrays
+	let L,
+    R;
+    if (n1) {
+      L = new Array(n1);
+    };
+    if (n2) {
+      R = new Array(n2);
     }
-    for (let i = 0; i < l2; ++i) {
-        arr2[i] = arr[middle + 1 + i];
-    }
 
-    // To travesrse and modify main array
-    let i = 0,
-        j = 0,
-        k = left;
+    // Copy data to temp arrays L[] and R[]
+    for (let i = 0; i < n1; i++) // n1 = 1
+        L[i] = arr[left + i];
+		console.log(L,"Array L",left );
+		
+    for (let j = 0; j < n2; j++) // n2 = 1
+        R[j] = arr[mid + 1 + j];
+		console.log(L,"Array R", j);
 
-    // Assign the smaller value for sorted output
-    while (i < l1 && j < l2) {
-        console.log(arr1[i] < arr2[j], "less");
+    let i = 0, j = 0;
+    let k = left;
 
-        if (arr1[i] < arr2[j]) {
-            arr[k] = arr1[i];
-            ++i;
+    // Merge the temp arrays back into arr[left..right]
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
         } else {
-            arr[k] = arr2[j];
+            arr[k] = R[j];
             j++;
         }
         k++;
     }
-    // Update the remaining elements
-    while (i < l1) {
-        arr[k] = arr1[i];
+
+    // Copy the remaining elements of L[], if there are any
+    while (i < n1) {
+        arr[k] = L[i];
         i++;
         k++;
     }
-    while (j < l2) {
-        arr[k] = arr2[j];
+
+    // Copy the remaining elements of R[], if there are any
+    while (j < n2) {
+        arr[k] = R[j];
         j++;
         k++;
     }
 }
 
-// Function to implement merger sort in javaScript
 function mergeSort(arr, left, right) {
-    if (left >= right) {
-        console.log(
-            `Base case reached for index: left=${left}, right=${right}`
-        );
+    if (left >= right)
         return;
-    }
 
-    // Middle index to create subarray halves
-    let middle = left + parseInt((right - left) / 2);
-
-    console.log(`Dividing: left=${left}, middle=${middle}, right=${right}`);
-
-    // Apply mergeSort to both the halves
-    console.log(arr, left, middle, "recusive");
-
-    mergeSort(arr, left, middle);
-    mergeSort(arr, middle + 1, right);
-
-    // Merge both sorted parts
-    Merge(arr, left, middle, right);
+	const mid = Math.floor(left + (right - left) / 2);
+  
+	console.log(`Calling mergeSort: left=${left}, mid=${mid}, right=${right}`);
+	mergeSort(arr, left, mid);
+  
+	console.log(`Back from left part: left=${left}, mid=${mid}, right=${right}`); // left = 0, mid = 0, right = 1;
+	mergeSort(arr, mid + 1, right);
+  
+	console.log(`Calling Merge: left=${left}, mid=${mid}, right=${right}`);
+	Merge(arr, left, mid, right);
+  
+	console.log(`Merge Completed: left=${left}, mid=${mid}, right=${right}`);
+	
+	
 }
 
-// Input array
-const arr = [38, 27, 43, 10];
+function printArray(arr) {
+    console.log(arr.join(" "));
+}
 
-// Apply merge sort function
+// Driver code
+const arr = [12, 11, 13, 5, 6, 7];
+console.log("Given array is");
+
 mergeSort(arr, 0, arr.length - 1);
 
-export default Merge;
+console.log("\nSorted array is");
+printArray(arr);
+
+export default Merge
