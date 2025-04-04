@@ -6,14 +6,16 @@ import RandomSorting from "../src/Js/Algorithm/Sort/RandomSorting.js";
 // import ReverseList from "./Js/DS/Linked-list";
 // import QuickSort from "./Js/Algorithm/Sort/QuickSort";
 // import Bubble from "./Js/Algorithm/Sort/Bubble";
-import Selection from "./Js/Algorithm/Sort/Selection.js";
+// import Selection from "./Js/Algorithm/Sort/Selection.js";
+import LargestElement from "./Js/Algorithm/Sort/Problems/LargestElement.js";
 
 function App() {
 	return (
 		<div className="App">
 			<div>
+				<LargestElement />
 				{/* <Merge /> */}
-				<Selection />
+				{/* <Selection /> */}
 				{/* <RandomSorting /> */}
 			</div>
 			<header className="App-header">
