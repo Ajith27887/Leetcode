@@ -8,15 +8,17 @@ import RandomSorting from "../src/Js/Algorithm/Sort/RandomSorting.js";
 // import Bubble from "./Js/Algorithm/Sort/Bubble";
 // import Selection from "./Js/Algorithm/Sort/Selection.js";
 import LargestElement from "./Js/Algorithm/Sort/Problems/LargestElement.js";
+import CheckArrayIsOrdered from "./Js/Algorithm/Sort/Problems/CheckArrayIsOrdered.js"
 
 function App() {
 	return (
 		<div className="App">
 			<div>
-				<LargestElement />
+				{/* <LargestElement /> */}
 				{/* <Merge /> */}
 				{/* <Selection /> */}
 				{/* <RandomSorting /> */}
+				{/* <CheckArrayIsOrdered/>/ */}
 			</div>
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />

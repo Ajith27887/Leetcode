@@ -1,7 +1,13 @@
-import React from "react";
+function LargestElement(arr, n, max = 0) {
 
-function LargestElement(arr) {}
+	if (arr.length === n  ) {  
+		return max;  
+    }
 
-LargestElement([10, 20, 4]);
+	max =  arr[n] > max ? arr[n] : max;
+	
 
-export default LargestElement;
+    return LargestElement(arr, n + 1, max);
+}
+
+console.log(LargestElement([10, 30,1110, 20, 50, 90, 100], 0));
