@@ -7,8 +7,8 @@ import RandomSorting from "../src/Js/Algorithm/Sort/RandomSorting.js";
 // import QuickSort from "./Js/Algorithm/Sort/QuickSort";
 // import Bubble from "./Js/Algorithm/Sort/Bubble";
 // import Selection from "./Js/Algorithm/Sort/Selection.js";
-import LargestElement from "./Js/Algorithm/Sort/Problems/LargestElement.js";
-import CheckArrayIsOrdered from "./Js/Algorithm/Sort/Problems/CheckArrayIsOrdered.js"
+// import LargestElement from "./Js/Algorithm/Sort/Problems/LargestElement.js";
+// import CheckArrayIsOrdered from "./Js/Algorithm/Sort/Problems/CheckArrayIsOrdered.js"
 import RemoveDuplicates from "./Js/Algorithm/Sort/Problems/RemoveDuplicates.js"
 
 function App() {
