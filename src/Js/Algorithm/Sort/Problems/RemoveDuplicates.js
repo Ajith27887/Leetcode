@@ -3,7 +3,7 @@
  * @return {number}
 */
 
-// Two Pointer App approach
+// Two Pointer App approach #26 Leetcode
 const removeDuplicates = function(nums) {
 	let j = 0;
 
