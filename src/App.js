@@ -10,6 +10,7 @@ import RandomSorting from "../src/Js/Algorithm/Sort/RandomSorting.js";
 // import LargestElement from "./Js/Algorithm/Sort/Problems/LargestElement.js";
 // import CheckArrayIsOrdered from "./Js/Algorithm/Sort/Problems/CheckArrayIsOrdered.js"
 import RemoveDuplicates from "./Js/Algorithm/Sort/Problems/RemoveDuplicates.js"
+import ReverseArray from "./Js/Algorithm/Sort/Problems/ReverseArray.js"
 
 function App() {
 	return (
